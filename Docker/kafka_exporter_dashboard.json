@@ -1,0 +1,162 @@
+{
+    "annotations": {
+      "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": null,
+    "links": [],
+    "panels": [
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 0, "y": 0 },
+        "id": 1,
+        "options": {},
+        "targets": [
+          {
+            "expr": "kafka_brokers",
+            "legendFormat": "Brokers",
+            "refId": "A"
+          }
+        ],
+        "title": "Kafka Brokers Count",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 6, "y": 0 },
+        "id": 2,
+        "options": {},
+        "targets": [
+          {
+            "expr": "kafka_topic_partition_current_offset",
+            "interval": "",
+            "legendFormat": "{{topic}} p{{partition}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Topic Partition Current Offsets",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 12, "y": 0 },
+        "id": 3,
+        "options": {},
+        "targets": [
+          {
+            "expr": "kafka_topic_partition_in_sync_replica",
+            "legendFormat": "{{topic}} p{{partition}} in-sync",
+            "refId": "A"
+          }
+        ],
+        "title": "In Sync Replicas",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 18, "y": 0 },
+        "id": 4,
+        "options": {},
+        "targets": [
+          {
+            "expr": "kafka_consumergroup_lag",
+            "legendFormat": "{{consumergroup}} / {{topic}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Consumer Group Lag",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 0, "y": 8 },
+        "id": 5,
+        "options": {},
+        "targets": [
+          {
+            "expr": "kafka_consumergroup_current_offset",
+            "legendFormat": "{{consumergroup}} / {{topic}} p{{partition}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Consumer Group Current Offset",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 6, "y": 8 },
+        "id": 6,
+        "options": {},
+        "targets": [
+          {
+            "expr": "go_memstats_alloc_bytes",
+            "legendFormat": "Go Alloc",
+            "refId": "A"
+          },
+          {
+            "expr": "go_memstats_heap_inuse_bytes",
+            "legendFormat": "Heap In Use",
+            "refId": "B"
+          }
+        ],
+        "title": "Go Memory (Exporter)",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": { "unit": "none" },
+          "overrides": []
+        },
+        "gridPos": { "h": 8, "w": 6, "x": 12, "y": 8 },
+        "id": 7,
+        "options": {},
+        "targets": [
+          {
+            "expr": "go_goroutines",
+            "legendFormat": "Goroutines",
+            "refId": "A"
+          }
+        ],
+        "title": "Go Goroutines (Exporter)",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "15s",
+    "schemaVersion": 30,
+    "style": "dark",
+    "tags": ["Kafka Exporter", "Strimzi"],
+    "templating": { "list": [] },
+    "time": { "from": "now-15m", "to": "now" },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Kafka Exporter Detailed Dashboard",
+    "uid": "kafka-exporter-detailed",
+    "version": 1
+  }
